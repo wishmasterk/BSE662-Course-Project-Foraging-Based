@@ -1,0 +1,28 @@
++. For eeg group:
+    1. Use mne (preferably v1.8 on python<3.11) to load the set files into Raw format, with proper units, timings, channel locations and event markers (all available in the set file).
+    2. Data cleaning: 
+        2.1. Plot the power spectral density (PSD) curve of the raw data, find the line noise peak frequency.
+        2.2. Apply line noise cleaning functions to obtain clean data.
+        2.3. Bandpass between (0.5,90) Hz and plot the PSD of the clean data.
+    3. Marker extraction:
+        3.1. Each set file contains data for [pre,post] stress x [short,long] envs.
+            x.  Marker format: TRIGGER EVENT <>
+                B: Start of prestress foraging block
+                I: Start of poststress foraging block
+                M: Fixation shape appears
+                N: Fixation shape turns green
+                R: Select leave option
+                U: Travel time ~20s
+                T: Travel time ~5s
+        3.2. Extract the event markers using mne annotations, and use them to figure out how many trials are there in each environment.
+
++. For bhv group:
+    1. Use the bhv_read.m matlab function to read the bhv files into a matlab structure.
+    2. Each (pre/post) stress bhv file has data for short and long travel time environments:
+        x. ReactionTimes has a NaN in the middle, seperating the environments. But it also has trailing NaNs at the end for bad trials.
+        x. UserVars.rwrd has reward data only for good trials, but no seperation between environments. 
+        x. AbsoluteTrialStartTimes has the starting timestamp of each trial, but contains no seperation between environments. 
+        x. Use AbsoluteTrialStartTmes, ReactionTimes and UserVars.rwrd to figure out how many trials are there in in each environment.
+    3. Put the seperated trial data in a matlab table, something like: [subid, stress_cond, env, trial_time, reaction_time, reward], and save it as a csv.
+
++. For both groups: Do the number of trials (extracted from the EEG and behavioral data) in each stress x environment match?
