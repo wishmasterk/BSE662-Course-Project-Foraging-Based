@@ -56,3 +56,27 @@ Install dependencies in Colab using:
 
 ```python
 !pip install mne==1.8.0
+
+## Week 2–3
+
+### FOOOF Analysis for Pre- and Post-Stress Conditions
+
+In Week 2–3, the focus shifted to performing **FOOOF analysis** on EEG data segmented into pre- and post-stress conditions. The goal was to extract aperiodic components (exponent and offset) and oscillatory peaks from the power spectral density (PSD) of the EEG signal. 
+
+The analysis is done using **MNE** for computing PSD and **FOOOF** for fitting the power spectrum to separate aperiodic and oscillatory components.
+
+---
+
+## 📂 Week 2-3 Deliverables
+
+### FOOOF Analysis and PSD Computation
+- Computed the **Power Spectral Density (PSD)** of the EEG data using **MNE's `psd_welch`** method.
+- Applied **FOOOF** to extract the **aperiodic exponent**, **offset**, and **oscillatory peaks** from the PSD.
+- Performed the analysis separately for **pre-stress** and **post-stress** segments.
+- Generated **visualizations** for the FOOOF model fit, showing the fit for each participant’s pre/post-stress data.
+
+### Group-Level Comparison
+- **Boxplots** were created to compare the **aperiodic exponent distributions** between the **pre-stress** and **post-stress** conditions across all participants.
+- The aperiodic exponent and offset were analyzed to investigate the effect of stress on the neural oscillatory components.
+
+---
