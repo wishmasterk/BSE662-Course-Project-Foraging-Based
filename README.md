@@ -56,27 +56,60 @@ Install dependencies in Colab using:
 
 ```python
 !pip install mne==1.8.0
+```
 
-## Week 2–3
 
-### FOOOF Analysis for Pre- and Post-Stress Conditions
 
-In Week 2–3, the focus shifted to performing **FOOOF analysis** on EEG data segmented into pre- and post-stress conditions. The goal was to extract aperiodic components (exponent and offset) and oscillatory peaks from the power spectral density (PSD) of the EEG signal. 
 
-The analysis is done using **MNE** for computing PSD and **FOOOF** for fitting the power spectrum to separate aperiodic and oscillatory components.
+## Week 2–3: Segmentation and FOOOF Analysis  
+
+### Goals
+
+In Week 2–3, the primary focus was on **segmenting** the EEG data into meaningful windows, performing **power spectral density (PSD)** analysis, and applying **FOOOF** to separate the **aperiodic** and **oscillatory** components of the EEG signal. This analysis helps in identifying stress-related changes in the brain's oscillatory activity.
+
+Key tasks for Week 2–3:
+- Segment the data into **trial**, **patch**, and **environmental** windows.
+- Compute **power spectral density (PSD)** for each segment.
+- Use **FOOOF** to separate **aperiodic** from **oscillatory** components of the PSD.
 
 ---
 
-## 📂 Week 2-3 Deliverables
+## 📂 Week 2–3 Deliverables
 
-### FOOOF Analysis and PSD Computation
-- Computed the **Power Spectral Density (PSD)** of the EEG data using **MNE's `psd_welch`** method.
-- Applied **FOOOF** to extract the **aperiodic exponent**, **offset**, and **oscillatory peaks** from the PSD.
-- Performed the analysis separately for **pre-stress** and **post-stress** segments.
-- Generated **visualizations** for the FOOOF model fit, showing the fit for each participant’s pre/post-stress data.
+### 1. Segmentation Strategy
 
-### Group-Level Comparison
-- **Boxplots** were created to compare the **aperiodic exponent distributions** between the **pre-stress** and **post-stress** conditions across all participants.
-- The aperiodic exponent and offset were analyzed to investigate the effect of stress on the neural oscillatory components.
+The EEG data was segmented into three primary levels:
+- **Trial-Level Segmentation**: Focuses on small, decision-related windows of approximately **3 seconds** centered on event markers such as "N" (fixation shape turns green).
+- **Patch-Level Segmentation**: Segments representing **15–30 seconds** corresponding to each foraging patch, capturing task-related behavior.
+- **Environment-Level Segmentation**: Longer windows used for analyzing the **pre-stress** and **post-stress** states.
+
+### 2. FOOOF Analysis
+
+- **In Python**:
+  - We computed the **Power Spectral Density (PSD)** for each segment using **MNE’s `psd_welch` method**.
+  - **FOOOF** was then applied to extract:
+    - **Aperiodic Exponent** and **Offset**
+    - **Oscillatory Peaks**
+  
+- **In Brainstorm**:
+  - We used the **Brainstorm GUI** to compute PSD and run preliminary power spectrum analysis.
+  - After computing the power spectrum in Brainstorm, we exported the data to **Python** for further analysis using **FOOOF**.
+
+### 3. Classifying Stress States
+
+To analyze the effect of stress, we compared the **pre-stress** and **post-stress** segments using:
+- **Aperiodic Exponent** (to detect changes in neural activity related to stress).
+- **Band Power** (to measure the power in various frequency bands).
+
+### 4. Deliverables
+
+- **Python Scripts**: 
+  - Scripts that compute the **PSD** using `mne.time_frequency.psd_welch` and perform **FOOOF** analysis to extract **aperiodic** and **oscillatory components**.
+  
+- **Preliminary Plots**:
+  - Plots comparing **aperiodic exponent distributions** for **pre- vs. post-stress conditions**.
+  
+- **Documentation**:
+  - Documentation of key parameter choices for **PSD** computation and **FOOOF analysis**.
 
 ---
