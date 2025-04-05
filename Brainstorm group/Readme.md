@@ -30,5 +30,48 @@ The CSV files were generated using the following steps:
 4. **Table Creation and Export:**  
    - The processed data is organized into a MATLAB table with the columns `[subid, stress_cond, env, trial_time, reaction_time, reward]` and then exported as a CSV file.
 
+Updates made on 4th april 2025(night)
 
+These are updated csv files with reward column
+Extra description of data:-
+>> bhv_data_processing
+Environment labels — long: 32, short: 41, separator: 1, bad: 1
+✅ CSV file saved as 31730_prestress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 42, short: 39, separator: 1, bad: 1
+✅ CSV file saved as 43000_prestress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 44, short: 39, separator: 1, bad: 1
+✅ CSV file saved as 47131_prestress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 28, short: 40, separator: 1, bad: 1
+✅ CSV file saved as 47324_prestress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 32, short: 37, separator: 1, bad: 1
+✅ CSV file saved as 47204_prestress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 38, short: 41, separator: 1, bad: 2
+✅ CSV file saved as 48238_prestress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 34, short: 42, separator: 1, bad: 1
+✅ CSV file saved as 31730_poststress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 39, short: 44, separator: 1, bad: 2
+✅ CSV file saved as 43000_poststress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 44, short: 39, separator: 1, bad: 1
+✅ CSV file saved as 47131_poststress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 38, short: 43, separator: 1, bad: 2
+✅ CSV file saved as 47204_poststress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 40, short: 23, separator: 1, bad: 3
+✅ CSV file saved as 47324_poststress_processed.csv
+>> bhv_data_processing
+Environment labels — long: 39, short: 45, separator: 1, bad: 1
+✅ CSV file saved as 48238_poststress_processed.csv
+
+There are 2-3 cases where no. of trials does match(out of 12 files) by factor of 1. Rest all matched exactly. Probable description of mismatch is occurence of more bad trails.
+
+Thanks
 
