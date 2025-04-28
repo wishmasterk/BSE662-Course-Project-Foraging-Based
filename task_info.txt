@@ -14,6 +14,19 @@
                 R: Select leave option
                 U: Travel time ~20s
                 T: Travel time ~5s
+MARKERS = {
+    'B': 'pre_stress_block_start',
+    'I': 'post_stress_block_start',
+    'M': 'fixation_appears',
+    'N': 'fixation_green',  # Stimulus onset
+    'O': 'patch_entry',
+    'P': 'stay_response',
+    'Q': 'reward_delivery',
+    'R': 'leave_response',
+    'S': 'leave_animation',
+    'T': 'short_travel',
+    'U': 'long_travel'
+} 
         3.2. Extract the event markers using mne annotations, and use them to figure out how many trials are there in each environment.
 
 +. For bhv group:
