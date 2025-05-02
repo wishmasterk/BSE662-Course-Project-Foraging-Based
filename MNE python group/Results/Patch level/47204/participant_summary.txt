@@ -1,0 +1,5 @@
+Participant 47204 Summary
+========================================
+
+FZ Average Aperiodic Exponent Change: -0.11%
+CZ Average Aperiodic Exponent Change: 9.12%
